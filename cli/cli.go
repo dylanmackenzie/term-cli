@@ -89,3 +89,7 @@ func play() {
 func upload() {
 	// f := flag.NewFlagSet("upload", flag.ExitOnError)
 }
+
+func stream() {
+
+}
