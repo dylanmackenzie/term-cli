@@ -2,7 +2,7 @@ package cli
 
 import (
 	"flag"
-	"log"
+	"fmt"
 	"os"
 
 	"dylanmackenzie.com/term-cli/logger"
@@ -28,6 +28,9 @@ func Run() {
 
 	if len(os.Args) > 1 {
 		sub = os.Args[1]
+	} else {
+		fmt.Print(usage)
+		os.Exit(1)
 	}
 
 	// Remove subcommand from list of arguments
@@ -43,7 +46,8 @@ func Run() {
 	case "stream":
 		stream()
 	default:
-		log.Fatal(usage)
+		fmt.Print(usage)
+		os.Exit(1)
 	}
 }
 
